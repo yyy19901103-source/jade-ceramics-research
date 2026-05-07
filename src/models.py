@@ -214,4 +214,30 @@ CREATE TABLE IF NOT EXISTS item_auctions (
     comparison_notes TEXT,
     PRIMARY KEY (item_id, auction_id)
 );
+
+-- エージェント判断結果
+CREATE TABLE IF NOT EXISTS judgment_results (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id         INTEGER REFERENCES items(id) ON DELETE CASCADE,
+    buy_conclusion  TEXT,
+    buy_reasons     TEXT,   -- JSON array
+    buy_conditions  TEXT,
+    buy_weak_points TEXT,
+    nobuy_conclusion TEXT,
+    nobuy_reasons   TEXT,   -- JSON array
+    nobuy_risks     TEXT,
+    nobuy_info_gaps TEXT,
+    judge_verdict   TEXT,   -- buy / no_buy / watch / need_more_info
+    judge_action    TEXT,
+    judge_comment   TEXT,
+    evidence_score  REAL,
+    info_shortage_rate REAL,
+    judge_buy_valid   TEXT,
+    judge_nobuy_valid TEXT,
+    additional_checks TEXT,
+    actual_outcome  TEXT,   -- genuine/fake/treated/overpriced/good_purchase/bad_purchase/no_buy_correct/unknown
+    reflection_json TEXT,   -- JSON
+    created_at      TEXT DEFAULT CURRENT_TIMESTAMP,
+    updated_at      TEXT DEFAULT CURRENT_TIMESTAMP
+);
 """
