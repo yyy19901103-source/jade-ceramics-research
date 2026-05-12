@@ -1,0 +1,4 @@
+specimen_id,site_name,excavation_date,material_type,color,weight_g,dimensions_mm,dynasty,provenance,condition,reference_url,notes
+SP001,Anyang,1976-04-12,nephrite,pale green,45.2,85x42x18,Shang,Henan Province,good,https://example.com/ref/sp001,Ritual bi disk fragment
+SP002,Liangzhu,1987-09-03,nephrite,dark green,120.8,110x60x25,Neolithic,Zhejiang Province,excellent,https://example.com/ref/sp002,Cong tube with geometric patterns
+SP003,Sanxingdui,2001-11-20,jadeite,lavender,32.1,55x30x12,Bronze Age,Sichuan Province,fair,,Figurine fragment
